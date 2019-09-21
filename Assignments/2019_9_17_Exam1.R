@@ -19,6 +19,9 @@ data02<-read_csv("datasets/abd/chapter13/chap13e5SagebrushCrickets.csv")
 names(data02)
 ggplot(data02)+
   geom_histogram(aes(timeToMating), binwidth= 5)+ facet_wrap(~"starved")
+# MARY: the correct argument for facet_wrap is the categorical variable, feedingStatus, not the specific
+# treatment.  Currently your code shows all values of timeToMating in every histogram, lumping
+# observations of both fed and starved together.
 ggplot(data02)+
   geom_histogram(aes(timeToMating), binwidth= 5)+ facet_wrap(~"fed")
 ggplot(data02)+
