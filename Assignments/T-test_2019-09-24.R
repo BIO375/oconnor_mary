@@ -15,9 +15,7 @@ summ_diff<-birthrate%>%
 data01<-read_csv("datasets/abd/chapter12/chap12e3HornedLizards.csv")
 data01<-data01%>%slice(-105)
 ggplot(data01)+
-  geom_histogram(aes(squamosalHornLength), binwidth= 5)+facet_wrap(~"living")
-ggplot(data01)+
-  geom_histogram(aes(squamosalHornLength), binwidth= 5)+ facet_wrap(~"killed")
+  geom_histogram(aes(squamosalHornLength), binwidth= 5)+facet_wrap(~Survival)
 ggplot(data01)+
   geom_boxplot(aes(x=Survival,y=squamosalHornLength),notch=FALSE, varwidth = TRUE)
 names(data01)
@@ -28,3 +26,4 @@ summ_squamosalHornLength<-data01%>%
             IQR_squamosalHornLength=IQR(squamosalHornLength),
             sd_squamosalHornLength=sd(squamosalHornLength),
             var_squamosalHornLength=var(squamosalHornLength))
+p<- 2*(1-pt(q=abs(5.40),df=182))
