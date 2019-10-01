@@ -155,4 +155,5 @@ ggplot(sanchez)+
 ggplot(sanchez)+
   geom_boxplot(aes(x=Bird,y=log(BEETLE96+1)),notch=FALSE, varwidth=TRUE)
 
+### CODE RUNS CORRECTLY 10/10 ####
                
