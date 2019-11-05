@@ -15,6 +15,11 @@ library("multcomp")
 install.packages("nlme")
 library("nlme")
 
+install.packages(c("purrr", "rlang"))
+yes
+library("purrr")
+library("rlang")
+
 # Load tidyverse
 library("tidyverse")
 # Check for updates
@@ -92,7 +97,7 @@ summ_growth.rate <- daphnia %>%
             n_growth.rate = n())
 ratio <-(max(summ_growth.rate$sd_growth.rate))/(min(summ_growth.rate$sd_growth.rate))
 
-# The function autoplot will give you a residuals by predicte plot, which is 
+# The function autoplot will give you a residuals by predicted plot, which is 
 # called "Residuals vs. Fitted" here.  It also gives you a Q-Q plot of the RESIDUALS.
 
 autoplot(model01)
@@ -159,7 +164,6 @@ summary(tukey)
 # This is a very simple test output, it gives you a test statistic, df, and p
 
 kruskal.test(growth.rate ~ parasite, data = daphnia)
-summary(kruskal)
 
 ### Robust Welch's ANOVA ####
 
