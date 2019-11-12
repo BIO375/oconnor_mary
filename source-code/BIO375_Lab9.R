@@ -14,11 +14,15 @@ library("ggfortify")
 # install.packages("broom")
 library("broom")
 
+library("multcomp")
+library("nlme")
 
 # Load tidyverse
 library("tidyverse")
 # Check for updates
 tidyverse_update()
+
+install.packages(c("haven", "rvest"))
 
 ### Correlation ####
 
@@ -31,7 +35,7 @@ tidyverse_update()
 # behaviors performed by the same birds when adult. 
 # Read and inspect the data
 
-booby <- read_csv("datasets/abd/chapter16/chap16e1FlippingBird.csv")
+booby <- read.csv("datasets/abd/chapter16/chap16e1FlippingBird.csv")
 head(booby)
 
 # Check for the assumption of bivariate normality using a basic scatter 
@@ -112,7 +116,7 @@ boobySpear
 # the relationship between lion age and proportion of black on the lion 
 # nose. 
 
-lion <- read_csv("datasets/abd/chapter17/chap17e1LionNoses.csv")
+lion <- read.csv("datasets/abd/chapter17/chap17e1LionNoses.csv")
 
 # The assumptions for a linear regression are difficult to test directly,
 # so we mostly diagnose departures using residuals plots.  In order
@@ -196,7 +200,7 @@ ggplot(data = lion, aes(x = proportionBlack, y = ageInYears)) +
 # the relationship floral tube length of an iris and the number of
 # pollen grains deposited by their pollinators.
 
-iris <- read_csv("datasets/abd/chapter17/chap17f6_3IrisPollination.csv")
+iris <- read.csv("datasets/abd/chapter17/chap17f6_3IrisPollination.csv")
 
 # Examine the data, including the residuals
 model02 <- lm(grainsDeposited ~ tubeLengthMm, data = iris)
