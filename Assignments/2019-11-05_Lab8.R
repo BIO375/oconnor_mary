@@ -95,6 +95,7 @@ summ_logSporozoiteNumbers <- malaria %>%
             sd_logSporozoiteNumbers = sd(logSporozoiteNumbers),
             n_logSporozoiteNumbers = n())
 ratio <-(max(summ_logSporozoiteNumbers$sd_logSporozoiteNumbers))/(min(summ_logSporozoiteNumbers$sd_logSporozoiteNumbers))
+
 # The ratio is less than 3 indicating to proceed with parametric test because of homogeneity of
 # variance and normality from the previous plots.
 
@@ -105,7 +106,7 @@ autoplot(model26)
 anova(model26)
 
 # (1-Way Fixed ANOVA, df,groups=2, df,error=40, F= 21.361, p<0.0001)
-# This indicates that there is differences in the number of sporozoites per group, but it
+# This indicates that there are differences in the number of sporozoites per group, but it
 # is not specific as to which groups differed.
 
 #summary of model results
@@ -137,6 +138,7 @@ ggplot(crab) +
   facet_wrap(~crabType)
 ggplot(crab)+
   geom_qq(aes(sample = bodyTemperature, color = crabType))
+
 # The boxplots do show a group with a slight left skew and the qq-plot is not quite best fit with
 # a linear line. However, the data is close enough to normally distributed that I am going to 
 # treat it as meeting the assumption of normality.
@@ -149,6 +151,7 @@ summ_bodyTemperature <- crab %>%
             sd_bodyTemperature = sd(bodyTemperature),
             n_bodyTemperature = n())
 ratio <-(max(summ_bodyTemperature$sd_bodyTemperature))/(min(summ_bodyTemperature$sd_bodyTemperature))
+
 # The ratio less than 3 and the data was at least relatively normal,
 # so I am proceeding with parametric test because it meets the assumptions of normality, 
 # homogeneity of variance, and random sampling.
@@ -166,6 +169,8 @@ summary(model30)
 tukey <- glht(model30, linfct = mcp(crabType = "Tukey"))
 
 summary(tukey)
-# Tukey's HSD showed significant differences between the following groups: intact male - female(*** 0.001),
-# male minor removed - female (*** 0.001), male major removed- female(*** 0.001), and 
+# Tukey's HSD showed significant differences between the following groups: 
+#intact male - female(*** 0.001),
+# male minor removed - female (*** 0.001), 
+# male major removed- female(*** 0.001), and 
 # male major removed - male minor removed(* 0.05)
