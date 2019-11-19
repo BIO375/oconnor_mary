@@ -5,13 +5,15 @@ rm(list = ls())
 # Verify working directory, should be ~/Documents/Analyses/lastname_first
 getwd()
 
-# Load ggfortify for plotting
+install.packages("ggfortify")
+
 library("ggfortify")
 
 # Load broom to convert statistical objects to tidy tibbles and plotly
 # for confidence bands
 # If you have not installed broom before, you will need to execute
-# install.packages("broom")
+install.packages("broom")
+
 library("broom")
 
 library("multcomp")
@@ -26,10 +28,14 @@ tidyverse_update()
 
 install.packages(c("haven", "rvest"))
 
+library("haven")
+
+library("rvest")
 #### Correlation ####
 
 # reading in the data
 library(readr)
+
 fowler <- read_csv("datasets/demos/fowler.csv")
 head(fowler)
 
@@ -108,6 +114,7 @@ ggplot(data = fowler_plus)+
 # Proceed with linear regression
 
 # statistical results
+
 summary(model01)
 
 # p-value of interest is found in the row "FERTILIZER", the intercept
