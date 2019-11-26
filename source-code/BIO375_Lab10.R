@@ -16,6 +16,8 @@ library("tidyverse")
 # Check for updates
 tidyverse_update()
 
+install.packages("rlang")
+
 ### Exact Binomial test ####
 
 # The simplest way to execute a binomial test is to use the function 
@@ -43,7 +45,7 @@ model02 <- binom.test(x= 28, n=41, p=0.5, alternative = "greater", conf.level = 
 model02
 
 # So we can conclude that females occured more frequently than expected in the wilderness population in Alaska 
-# (binomial test: P < 0.05, n=46) but not in the Kevo population (binomial test: P > 0.05 n=41).
+# (binomial test: P < 0.05, n=41) but not in the Kevo population (binomial test: P > 0.05 n=46).
 
 ### Chi-squared goodness of fit ####
 
