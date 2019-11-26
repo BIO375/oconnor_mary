@@ -1,5 +1,6 @@
 ### Exam 3 practice problem 
 rm(list = ls())
+
 library(ggfortify)
 library(tidyverse)
 
