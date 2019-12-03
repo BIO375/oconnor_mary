@@ -133,3 +133,6 @@ ggplot(data = DriverVision, aes(x = Age, y = Distance)) +
 # we are confident in the estimate of our line (~95%). This confirms that the data meets
 # the fourth assumption: there is a linear relationship between the predictor (x) and 
 # response (y) variables.
+
+
+#### Code runs perfectly 5/5 ####
