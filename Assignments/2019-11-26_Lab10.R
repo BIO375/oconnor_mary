@@ -46,25 +46,26 @@ model01
 # Degrees of Freedom : number of categories - 1 = 1
 2-1
 
-progeny <- read_csv("datasets/demos/progeny.csv", 
-                  col_types = cols(color = col_factor()))
+flower <- read_csv("datasets/demos/flower.csv",
+                   col_types = cols(color = col_factor()))
 
-progeny_summ <- progeny %>%
+flower_summ <- flower %>%
   group_by(color)%>%
   summarise(color_n = n())
 
-progeny_summ <- add_column(progeny_summ, expected= c(75,25)) %>%
+flower_summ <- add_column(flower_summ, expected= c(75,25)) %>%
   mutate(expected_p = expected/100)
 
 # All the expected values are greater than 5 so we meet the assumptions of the 
 #chi-sq goodness of fit test
 
-model02 <-chisq.test(x = progeny_summ$color_n, p = progeny_summ$expected_p)
+model02 <-chisq.test(x = flower_summ$color_n, p = flower_summ$expected_p)
 model02
 
-# X2 = 6.4533
+
+# X2 = 4.32
 # The observed frequencies deviate significantly from the expected frequencies.
-# (X2 goodness of fit: X2 = 6.4533, df = 1, p = 0.01107)
+# (X2 goodness of fit: X2 = 4.32, df = 1, p = 0.03767)
 
 #### Contingency Table Analysis ####
 
