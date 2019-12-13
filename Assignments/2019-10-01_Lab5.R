@@ -34,3 +34,6 @@ ratio <-(max(summ_METRATE$sd_METRATE))/(min(summ_METRATE$sd_METRATE))
 web_data<-read.csv("datasets/quinn/chpt3/elgar.csv")
 t.test(web_data$HORIZLIG, web_data$HORIZDIM,
        alternative = "two.sided", paired = TRUE, conf.level = 0.95)
+
+#### 10/10 Code runs without breaking ####
+

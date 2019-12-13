@@ -27,3 +27,6 @@ summ_squamosalHornLength<-data01%>%
             sd_squamosalHornLength=sd(squamosalHornLength),
             var_squamosalHornLength=var(squamosalHornLength))
 p<- 2*(1-pt(q=abs(5.40),df=182))
+
+
+#### 10/10 Code runs without breaking ####
