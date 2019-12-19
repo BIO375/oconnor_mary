@@ -143,4 +143,4 @@ ggplot(data = fowler, aes(x = FERTILIZER, y = YIELD)) +
 # the fourth assumption: there is a linear relationship between the predictor (x) and 
 # response (y) variables.
 
-
+#### 10/10 code runs without breaking ####

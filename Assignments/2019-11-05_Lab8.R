@@ -174,3 +174,5 @@ summary(tukey)
 # male minor removed - female (*** 0.001), 
 # male major removed- female(*** 0.001), and 
 # male major removed - male minor removed(* 0.05)
+
+#### 26/26 code runs without breaking ####

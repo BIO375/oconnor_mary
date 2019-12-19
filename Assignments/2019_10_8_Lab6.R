@@ -164,3 +164,5 @@ secondsAggressiveActivity_ratio <-(max(summ_secondsAggressiveActivity$sd_seconds
 t.test(secondsAggressiveActivity~ genotype, data = fishdata, var.equal = TRUE, alternative = "two.sided", conf.level = 0.95)
 
 #(two-sided, two-sample t-test, t=3.3802, df=19, p=0.003142)
+
+###24/24 code runs without breaking ####

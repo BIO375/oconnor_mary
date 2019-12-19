@@ -145,3 +145,5 @@ tukey <- glht(model02Aldrin, linfct = mcp(Depth = "Tukey"))
 summary(tukey)
 
 #only a significant difference between Bottom and Surface in this data
+
+#### 10/10 code runs without breaking ####
